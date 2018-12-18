@@ -2,6 +2,7 @@
 // Create a Button Class
 
 
+
 class Button extends React.Component {
 /*
 constructor(props){
@@ -22,8 +23,8 @@ handleClick = () => {
 
 	render(){
     return (
-    	<button onClick={this.props.onClickFunction}>
-      	+1
+    	<button onClick={() => this.props.onClickFunction(this.props.incrementValue)}>
+      	+{this.props.incrementValue}
       </button>
     );
   }
@@ -37,15 +38,18 @@ const Result = (props) => {
 
 class App extends React.Component{
 	state = {counter: 0};
-  incrementCounter = () => {
+  incrementCounter = (incrementValue) => {
   	this.setState((prevState) => ({
-    	counter: prevState.counter + 1
+    	counter: prevState.counter + incrementValue
     }));
   }; 
 	render() {
   	return (
     	<div>
-      	<Button onClickFunction={this.incrementCounter}/>
+      	<Button incrementValue={1} onClickFunction={this.incrementCounter}/>
+        <Button incrementValue={5} onClickFunction={this.incrementCounter}/>
+        <Button incrementValue={11} onClickFunction={this.incrementCounter}/>
+        <Button incrementValue={20} onClickFunction={this.incrementCounter}/>
         <Result counter={this.state.counter}/>
       </div>
     );
