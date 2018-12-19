@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 // Card is component which is a function component
 const Card = (props) => {
 	return (
