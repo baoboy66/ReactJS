@@ -1,4 +1,4 @@
-
+//test
 const Stars = props => {
 	// every time react render, new number will get generated
   // move this to the Game component to avoid new number generation
